@@ -1,0 +1,24 @@
+type Query{
+    carList:[CarDTO]
+    carfindbyid(id:Float):CarDTO
+    getCarByModel(model : String):[CarDTO]
+    getCarByModelAndPrice(model:String ,price: Float):CarDTO
+}
+type  CarDTO{
+    model:String,
+   color:String,
+   matricul:String,
+    price:Float
+}
+
+type Mutation {
+    saveCar(car:CarRequest):CarDTO
+    deleteCar(id:Float):CarDTO
+}
+input CarRequest{
+
+    model:String,
+    color:String,
+    matricul:String,
+    price:Float
+}
